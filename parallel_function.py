@@ -2,20 +2,15 @@ import openai
 import json
 
 def get_stock_price(symbol):
-    if symbol == "TSLA":
-        return "$222.18"
-    else:
-        return "Unknown"
+    return "$222.18" if symbol == "TSLA" else "Unknown"
 
 def tweet_send(symbol):
     data = get_stock_price(symbol)
-    answer = f"New Tweet Msg: Tesla's Q2 revenue in 2023 was {data}. #Tesla #2023"
-    return answer
+    return f"New Tweet Msg: Tesla's Q2 revenue in 2023 was {data}. #Tesla #2023"
 
 def facebook_send(symbol):
     data = get_stock_price(symbol)
-    answer = f"New Facebook Msg: Tesla's Q2 revenue in 2023 was {data}. #Tesla #2023"
-    return answer
+    return f"New Facebook Msg: Tesla's Q2 revenue in 2023 was {data}. #Tesla #2023"
 
 messages = [{"role": "user", "content": "Send a tweet message and facebook message about Tesla's current stock price."}]
 tools = [

@@ -6,8 +6,7 @@ def document_qa_function(question):
     return "$24B"
 
 def tweet_generator(message):
-    answer = f"Tesla's Q2 revenue in 2023 was {message}. #Tesla #2023"
-    return answer
+    return f"Tesla's Q2 revenue in 2023 was {message}. #Tesla #2023"
 
 prompt = hub.pull("homanp/superagent")
 

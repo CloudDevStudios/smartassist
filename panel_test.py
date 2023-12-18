@@ -3,8 +3,7 @@ import panel as pn
 pn.extension(design="material")
 
 def callback(contents: str, user: str, instance: pn.chat.ChatInterface):
-    message = f"Echoing {user}: {contents}"
-    return message
+    return f"Echoing {user}: {contents}"
 
 chat_interface = pn.chat.ChatInterface(callback=callback)
 chat_interface.send(

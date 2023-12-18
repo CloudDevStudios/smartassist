@@ -113,12 +113,11 @@ async def callback(contents: str, user: str, instance: pn.chat.ChatInterface):
 
     if not initiate_chat_task_created:
         asyncio.create_task(delayed_initiate_chat(user_proxy, gpt_assistant, contents))
-        
+
+    elif input_future and not input_future.done():
+        input_future.set_result(contents)
     else:
-        if input_future and not input_future.done():
-            input_future.set_result(contents)
-        else:
-            print("There is currently no input being awaited.")
+        print("There is currently no input being awaited.")
 
 pn.extension(design="material")
 
@@ -141,16 +140,16 @@ def file_callback(*events):
     for event in events:
         if event.name == 'filename':
             file_name = event.new
-        if event.name == 'value':
+        elif event.name == 'value':
             file_content = event.new
-    
+
     uploading.value = True
     uploading.name = 'Uploading'
     file_path = file_name
 
     with open(file_path, 'wb') as f:
         f.write(file_content)
-    
+
     response = client.files.create(file=open(file_path, 'rb'), purpose='assistants')
 
     found = False
@@ -159,7 +158,7 @@ def file_callback(*events):
             if file.id == response.id:
                 found = True
                 print(f"Uploaded file with ID: {response.id}\n {file}")
-                
+
                 global gpt_assistant
                 llm_config['file_ids'] = [file.id]
                 gpt_assistant.delete_assistant()
