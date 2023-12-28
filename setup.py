@@ -9,7 +9,7 @@ from setuptools import setup
 params = dict(
     name='smartassist',
     description='Youtube_demos',
-    version='1.0.0',
+    version='1.1.0',
     url='https://github.com/CloudDevStudios/smartassist.git',
     install_requires=[],
     packages=[],
