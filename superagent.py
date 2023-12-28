@@ -11,8 +11,8 @@ def tweet_generator(message):
 
 prompt = hub.pull("homanp/superagent")
 
-os.environ["OPENAI_API_KEY"] = "Your_OpenAI_Key"
-model = ChatOpenAI(model="gpt-3.5-turbo-0301")
+os.environ["OPENAI_API_KEY"] = "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"
+model = ChatOpenAI(model="gpt-4-1106-preview")
 
 runnable = prompt | model
 output = runnable.invoke({

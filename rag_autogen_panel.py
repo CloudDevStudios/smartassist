@@ -14,7 +14,7 @@ from autogen.agentchat.contrib.gpt_assistant_agent import GPTAssistantAgent
 from openai import OpenAI
 
 
-os.environ["OPENAI_API_KEY"] = "sk-Your_OpenAI_KEY"
+os.environ["OPENAI_API_KEY"] = "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"
 assistant_id = os.environ.get("ASSISTANT_ID", None)
 document = ''
 client = OpenAI()
