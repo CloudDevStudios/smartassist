@@ -6,7 +6,7 @@ import os
 import time
 import asyncio
 
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "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 "
 
 config_list = [
     {
@@ -23,7 +23,8 @@ class MyConversableAgent(autogen.ConversableAgent):
         global input_future
         print('AGET!!!!!!')  # or however you wish to display the prompt
         chat_interface.send(prompt, user="System", respond=False)
-        # Create a new Future object for this input operation if none exists
+        # Create a new Future object for this input operation if noneL
+        #  exists
         if input_future is None or input_future.done():
             input_future = asyncio.Future()
 
