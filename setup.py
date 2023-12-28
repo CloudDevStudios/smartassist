@@ -9,13 +9,14 @@ from setuptools import setup
 params = dict(
     name='smartassist',
     description='Youtube_demos',
-    version='0.0.0',
-    url='',
+    version='1.0.0',
+    url='https://github.com/CloudDevStudios/smartassist.git',
     install_requires=[],
     packages=[],
     package_data={},
     include_package_data=True,
-    py_modules=[],
+    py_modules=['autogen_test', 'json_output', 'panel_autogen', 'panel_autogen_2', 'panel_test',
+                'parallel_function', 'rag_autogen_panel', 'reproducible', 'retrieval', 'stepback', 'superagent'],
     scripts=None)
 
 ########## EDIT BELOW THIS LINE ONLY ##########
